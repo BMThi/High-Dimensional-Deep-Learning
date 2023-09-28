@@ -16,7 +16,7 @@ model.compile(loss="sparse_categorical_crossentropy",
 ts=time.time()
 model.fit(X_train_conv, Y_train,
           batch_size=batch_size,
-          epochs=epochs,
+          epochs=10,
           verbose=1,
           validation_data=(X_test_conv, Y_test))
 te=time.time()
