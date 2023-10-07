@@ -20,7 +20,7 @@ def compute_iou(y_true, y_pred):
     # Determining the intersection of bounding boxes
     intersect_mins  = tf.maximum(pred_mins, true_mins)
     intersect_maxs  = tf.minimum(pred_maxs, true_maxs)
-    intersect_wh    = tf.maximum(intersect_maxes - intersect_mins, 0.)
+    intersect_wh    = tf.maximum(intersect_maxs - intersect_mins, 0.)
     intersect_areas = intersect_wh[:, 0] * intersect_wh[:, 1]
 
     # Area of predicted and actual bounding boxes

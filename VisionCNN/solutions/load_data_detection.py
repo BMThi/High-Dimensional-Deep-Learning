@@ -62,7 +62,7 @@ def load_data_detection():
                         # Confidence index of the bounding box
                         presence = np.array([1], dtype="i")
                         # "One-hot vector " to represent the class probabilities
-                        classes = np_utils.to_categorical(label[0], num_classes=4)
+                        classes = to_categorical(label[0], num_classes=4)
                         # We arrange the class probabilities at the end of the vector ([ BOX 1 ; BOX 2 ; ... ; BOX N ; CLASSES])
                         y[i, ind_x, ind_y, 5 * BOX_PER_CELL:] = classes
 

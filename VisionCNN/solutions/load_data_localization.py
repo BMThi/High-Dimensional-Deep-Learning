@@ -50,13 +50,13 @@ def load_data_localization(image_size):
                         area = float(labels[j].split()[3]) * float(labels[j].split()[4])
                         # Update the maximum area bounding box, if necessary
                         if area > area_max:
-                            area_max = aire
+                            area_max = area
                             j_max = j    
 
                 # An object is present on the image (presence = 1)
                 presence = np.array([1], dtype="i")
                 # "One-hot vector " to represent the class probabilities
-                classes = np_utils.to_categorical(labels[j_max].split()[0], num_classes=4)
+                classes = to_categorical(labels[j_max].split()[0], num_classes=4)
                 # Coordinates of the maximum area bounding box
                 coordinates = np.array(labels[j_max].split()[1:], dtype="f")
                 # Filling the variable y

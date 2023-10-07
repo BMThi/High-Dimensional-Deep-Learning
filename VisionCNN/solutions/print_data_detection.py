@@ -9,7 +9,7 @@ def print_data_detection(x, y, id=None, image_size=IMAGE_SIZE, mode='gt'):
     img = x[num_img]
     lab = y[num_img]
 
-    colors = ["blue", "yellow", "red", "orange"] # Different colors for the different classes
+    colors = ["royalblue", "limegreen", "purple", "darkorange"] # Different colors for the different classes
     classes = ["Buffalo", "Elephant", "Rhino", "Zebra"]
 
     boxes = lab[:, :, 1:5]
@@ -34,7 +34,7 @@ def print_data_detection(x, y, id=None, image_size=IMAGE_SIZE, mode='gt'):
     indices_sorted = np.argsort(-all_presences)
 
     # Eliminate all bounding boxes whose probability of presence is < 0.5 
-    seuil = 0.35
+    threshold = 0.35
     all_boxes = all_boxes[np.where(all_presences > threshold)]
     all_classes = all_classes[np.where(all_presences > threshold)]
     all_presences = all_presences[np.where(all_presences > threshold)]
