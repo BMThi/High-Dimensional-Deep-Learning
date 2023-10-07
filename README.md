@@ -1,6 +1,8 @@
 ## <a href="http://www.insa-toulouse.fr/" ><img src="http://www.math.univ-toulouse.fr/~besse/Wikistat/Images/Logo_INSAvilletoulouse-RVB.png" style="float:left; max-width: 80px; display: inline" alt="INSA"/> |  [*Mathématiques Appliquées*](http://www.math.insa-toulouse.fr/fr/index.html), [`Science des Données`](http://www.math.insa-toulouse.fr/fr/enseignement.html) 
 
+
 # High Dimensional and Deep Learning
+
 
 ## Presentation
 
@@ -24,7 +26,6 @@ The main theme of the course is learning methods, especially deep neural network
 * Recurrent Neural Networks <br/>
 **Application** : [Sentiment analysis through Recurrent Neural Networks](https://github.com/wikistat/High-Dimensional-Deep-Learning/tree/master/RNN)
 
-------------
  
 
 ## Organisation
