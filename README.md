@@ -10,12 +10,12 @@ The main theme of the course is learning methods, especially deep neural network
 
  
 * Neural networks and introduction to deep learning: definition of neural networks, activation functions, multilayer perceptron, backpropagation algorithms, optimization algorithms, regularization. <br/>
-**Application** : [Implementation of a mlp with one layer with `Numpy`](https://github.com/wikistat/High-Dimensional-Deep-Learning/tree/master/BackPropagation)
+**Application** : [Implementation of a mlp with one layer with `Numpy`](BackPropagation)
 
 
 * Convolutional neural networks: convolutional layer, pooling, dropout, convolutional network architectures (ResNet, Inception), transfer learning and fine tuning, applications for image or signal classification, applications for objects localization and detection. <br/>
-**Application 1** : [Image classification on *MNIST* and *CatsVsDogs* data with `Tensorflow`](https://github.com/wikistat/High-Dimensional-Deep-Learning/tree/master/ImageClassification) <br/>
-**Application 2** : [Objects localization and detection through CNNs](https://github.com/wikistat/High-Dimensional-Deep-Learning/tree/master/VisionCNN)
+**Application 1** : [Image classification on *MNIST* and *CatsVsDogs* data with `Tensorflow`](ImageClassification) <br/>
+**Application 2** : [Objects localization and detection through CNNs](VisionCNN)
 
 * Encoder-decoder, Variational auto-encoder, Generative adversarial networks
 
@@ -24,7 +24,7 @@ The main theme of the course is learning methods, especially deep neural network
 * Anomaly detection for functional data: One Class SVM, Random Forest, Isolation Forest, Local Outlier Factor. Applications to  anomaly detection in functional data.
  
 * Recurrent Neural Networks <br/>
-**Application** : [Sentiment analysis through Recurrent Neural Networks](https://github.com/wikistat/High-Dimensional-Deep-Learning/tree/master/RNN)
+**Application** : [Sentiment analysis through Recurrent Neural Networks](RNN)
 
  
 
