@@ -6,10 +6,8 @@ def coloredSentences(sentences, out=15):
         - sentences.values() are booleans that encode the sentiment
     - out is an integer indicating the maximum number of sentences to display
     """
-    cpt = 0
 
-    for _, w in enumerate(sentences):
-        cpt += 1
+    for cpt, w in enumerate(sentences):
         if sentences[w]:
             print(Fore.GREEN + w)
         else:

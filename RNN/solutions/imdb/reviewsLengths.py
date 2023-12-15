@@ -8,9 +8,9 @@ for x in X_test:
     
     
 plt.figure(figsize = (10,6))
-sns.histplot(x=train_lengths,color='orange',alpha=.8)
-sns.histplot(x=test_lengths,alpha=.5)
-plt.legend(['train lengths','test lengths'])    
+sns.histplot(x=train_lengths, color='orange', alpha=.8)
+sns.histplot(x=test_lengths, alpha=.5)
+plt.legend(['train lengths', 'test lengths'])    
 
 
 print('Maximum review length: {}'.format(max(train_lengths+test_lengths)))
