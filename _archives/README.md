@@ -2,4 +2,4 @@ In this folder you will find old practical work materials, not maintained by the
 
 <br>
 
->  #### _Last updated in 2024_
+>  #### _Last updated in 2024._
