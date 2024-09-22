@@ -8,3 +8,8 @@ This tutorial uses the "wildlife" _dataset_.
 ```
 !git clone https://plmlab.math.cnrs.fr/chevallier-teaching/datasets/wildlife.git
 ```
+
+To download solutions to collab, run the command:
+```
+!wget --recursive --no-check-certificate 'https://plmbox.math.cnrs.fr/d/7d9464fc90634b1280c4/?dl=1'
+```
