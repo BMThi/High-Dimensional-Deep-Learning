@@ -1,4 +1,4 @@
-def decodeReview(idx):
+def decodeReview(idx, X_train=X_train, y_train=y_train):
     '''
     Converts the encoded idx-th review to human readable form.
     Displays the review number, the review in words and the label

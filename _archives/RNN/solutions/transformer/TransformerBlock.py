@@ -1,4 +1,4 @@
-class TransformerBlock(layers.Layer):
+class TransformerBlock(Layer):
     # embed_dim: Size of embeddings, maintained across the various layers
     # num_heads: number of heads in the attention layer
     
@@ -6,13 +6,13 @@ class TransformerBlock(layers.Layer):
         super().__init__()
         ## Definition of the different layers making up the block
         # Attention layer
-        self.layerAttn = layers.MultiHeadAttention(num_heads=num_heads, key_dim=embed_dim)
+        self.layerAttn = MultiHeadAttention(num_heads=num_heads, key_dim=embed_dim)
         # First Normalization layer
-        self.layerNorm1 = layers.LayerNormalization()
+        self.layerNorm1 = LayerNormalization()
         # Dense layer (Feed-Forward)
-        self.layerDense = layers.Dense(embed_dim, activation="relu")
+        self.layerDense = Dense(embed_dim, activation="relu")
         # Second Normalization layer
-        self.layerNorm2 = layers.LayerNormalization()
+        self.layerNorm2 = LayerNormalization()
 
     def call(self, inputs):
         ## Applying successive layers to inputs
