@@ -47,21 +47,28 @@ _Goal:_ Objects localization and detection through CNNs. Implementation of a sim
 
 ## PART II: Auto-Encoders and VAEs
 
-_Keywords_ : Encoder-decoder, Variational auto-encoder, representation learning
+_Keywords_ : Encoder-decoder, Variational auto-encoder, representation learning.
 
 <br>
 
 
-## PART III: Natural Language Processing (NLP)
+## PART III: Self-supervised Learning (SSL)
+
+_Keywords_ : contrastive learning, masked autoencoders.
+
+<br>
+
+
+## PART IV: Natural Language Processing (NLP)
 
 _keywords_ : Recurrent Neural Networks, LSTM, GRU, Transformers.
 
 <br>
 
 
-## PART IV: Explainability
+## PART V: Explainability
 
-_keywords_ : explainability
+_keywords_ : Explainability.
 
 
 
