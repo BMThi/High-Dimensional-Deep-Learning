@@ -45,9 +45,17 @@ _Goal:_ Objects localization and detection through CNNs. Implementation of a sim
 <br>
 
 
-## PART II: TBA
+## PART II: Auto-Encoders and VAEs
 
-_Keywords_ : Encoder-decoder, Variational auto-encoder, Generative adversarial networks
+_Keywords_ : Encoder-decoder, Variational auto-encoder, representation learning
+
+## PART III: Natural Language Processing (NLP)
+
+_keywords_ : Recurrent Neural Networks, LSTM, GRU, Transformers.
+
+## PART IV: Explainability
+
+_keywords_ : explainability
 
 
 
