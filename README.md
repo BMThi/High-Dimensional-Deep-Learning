@@ -49,9 +49,15 @@ _Goal:_ Objects localization and detection through CNNs. Implementation of a sim
 
 _Keywords_ : Encoder-decoder, Variational auto-encoder, representation learning
 
+<br>
+
+
 ## PART III: Natural Language Processing (NLP)
 
 _keywords_ : Recurrent Neural Networks, LSTM, GRU, Transformers.
+
+<br>
+
 
 ## PART IV: Explainability
 
