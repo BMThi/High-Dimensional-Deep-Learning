@@ -26,7 +26,7 @@ history_norm = mlp_norm.fit(x_train_flatten_norm, y_train,
                             epochs = epochs,
                             verbose = 1,
                             validation_data = (x_test_flatten_norm, y_test))
-t_train_mlp_norm = t_train_mlp_norm - time.time()
+t_train_mlp_norm = time.time() - t_train_mlp_norm
 
 score_mlp_norm = mlp_norm.evaluate(x_test_flatten_norm, y_test, verbose=0)
 predict_mlp_norm = mlp_norm.predict(x_test_flatten_norm)

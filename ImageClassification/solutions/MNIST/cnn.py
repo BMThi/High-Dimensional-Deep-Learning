@@ -17,13 +17,10 @@ ConvNet.compile(loss = "sparse_categorical_crossentropy",
               metrics = ['accuracy'])
 
 # Network training
-ts=time.time()
 t_train_ConvNet = time.time()
 ConvNet.fit(x_train_conv, y_train,
           batch_size = batch_size,
           epochs = 10,
           verbose = 1,
           validation_data = (x_test_conv, y_test))
-te=time.time()
 t_train_ConvNet = time.time() - t_train_ConvNet
-t_train_conv = te-ts
