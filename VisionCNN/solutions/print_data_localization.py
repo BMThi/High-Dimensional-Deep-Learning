@@ -1,5 +1,3 @@
-# %load solutions/print_data_localization.py
-
 def print_data_localization(x, y, y_pred=[], id=None, image_size=IMAGE_SIZE):
     if id==None:
         # Random drawing of an image in the database
@@ -18,7 +16,7 @@ def print_data_localization(x, y, y_pred=[], id=None, image_size=IMAGE_SIZE):
 
     # Image display
     plt.imshow(img)
-    # Determination of the class
+    # Determining the class
     class_id = np.argmax(lab[5:])
 
     # Determining the coordinates of the bounding box in the image frame
@@ -27,7 +25,7 @@ def print_data_localization(x, y, y_pred=[], id=None, image_size=IMAGE_SIZE):
     width = (lab[3]*y_std[3] + y_mean[3]) * image_size
     height = (lab[4]*y_std[4] + y_mean[4]) * image_size
     #print("x: {}, y: {}, w: {}, h:{}".format(ax,ay,width, height))
-    # Determination of the extrema of the bounding box
+    # Determining the coordinates of the bounding box in the image frame of the extrema of the bounding box
     p_x = [ax-width/2, ax+width/2]
     p_y = [ay-height/2, ay+height/2]
     # Display the bounding box in the right color
@@ -42,7 +40,7 @@ def print_data_localization(x, y, y_pred=[], id=None, image_size=IMAGE_SIZE):
         # Image display
         plt.imshow(img)
         lab = y_pred[num_img]
-        # Determination of the class
+        # Determining the class
         class_id = np.argmax(lab[5:])
 
         # Determining the coordinates of the bounding box in the image frame
@@ -51,7 +49,7 @@ def print_data_localization(x, y, y_pred=[], id=None, image_size=IMAGE_SIZE):
         width = (lab[3]*y_std[3] + y_mean[3]) * image_size
         height = (lab[4]*y_std[4] + y_mean[4]) * image_size
         #print("x: {}, y: {}, w: {}, h:{}".format(ax,ay,width, height))
-        # Determination of the extrema of the bounding box
+        # Determining the coordinates of the bounding box in the image frame of the extrema of the bounding box
         p_x = [ax-width/2, ax+width/2]
         p_y = [ay-height/2, ay+height/2]
         # Display the bounding box in the right color

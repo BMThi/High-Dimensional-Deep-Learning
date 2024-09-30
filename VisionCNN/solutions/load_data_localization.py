@@ -1,9 +1,9 @@
 def load_data_localization(image_size):
     # Path to the database
-    ds_path = "./wildlife/"
+    data_path = "./wildlife/"
     # Paths to the data of the 4 different classes
-    paths = [ds_path + "buffalo/", ds_path + "elephant/", ds_path + "rhino/", ds_path + "zebra/"]
-    # Index for adding data to the x and y variables 
+    paths = [data_path + "buffalo/", data_path + "elephant/", data_path + "rhino/", data_path + "zebra/"]
+    # Index for adding data to the x and y variables
     i = 0
     # Preparation of data structures for x and y
     x = np.zeros((DATASET_SIZE, image_size, image_size, 3))
@@ -19,15 +19,15 @@ def load_data_localization(image_size):
         for item in dirs:
             #print(path+item)
             if os.path.isfile(path + item):
-                # Extracting the file extension 
-                extension =item.split(".")[1]
+                # Extracting the file extension
+                extension = item.split(".")[1]
 
             if extension=="jpg" or extension=="JPG":
                 # Image : we will fill the variable x
                 # Reading the image
-                img = Image.open(path + item)
+                img = PIL.Image.open(path + item)
                 # Image scaling
-                img = img.resize((image_size,image_size), Image.ANTIALIAS)
+                img = img.resize((image_size,image_size), PIL.Image.Resampling.LANCZOS)
                 # Filling the variable x
                 x[i] = np.asarray(img)
 
@@ -35,8 +35,8 @@ def load_data_localization(image_size):
                 # Text file: bounding box coordinates to fill y
                 labels = open(path + item, "r")
                 # Retrieving of lines from the text file
-                labels= labels.read().split('\n')
-                # If the last line is empty, delete it 
+                labels = labels.read().split('\n')
+                # If the last line is empty, delete it
                 if labels[-1]=="":
                     del labels[-1]
 
@@ -51,7 +51,7 @@ def load_data_localization(image_size):
                         # Update the maximum area bounding box, if necessary
                         if area > area_max:
                             area_max = area
-                            j_max = j    
+                            j_max = j
 
                 # An object is present on the image (presence = 1)
                 presence = np.array([1], dtype="i")
@@ -60,7 +60,7 @@ def load_data_localization(image_size):
                 # Coordinates of the maximum area bounding box
                 coordinates = np.array(labels[j_max].split()[1:], dtype="f")
                 # Filling the variable y
-                y[i, 0] = presence
+                y[i, 0] = presence[0]
                 y[i, 1:5] = coordinates
                 y[i, 5:] = classes
 

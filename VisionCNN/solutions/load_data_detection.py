@@ -1,9 +1,9 @@
 def load_data_detection():
     # Path to the database
-    ds_path = "./wildlife/"
+    data_path = "./wildlife/"
     # Paths to the data of the 4 different classes
-    paths = [ds_path+"buffalo/", ds_path+"elephant/", ds_path+"rhino/", ds_path+"zebra/"]
-    # Index for adding data to the x and y variables 
+    paths = [data_path+"buffalo/", data_path+"elephant/", data_path+"rhino/", data_path+"zebra/"]
+    # Index for adding data to the x and y variables
     i = 0
     # Preparation of data structures for x and y
     x = np.zeros((DATASET_SIZE, IMAGE_SIZE, IMAGE_SIZE, 3))
@@ -22,15 +22,15 @@ def load_data_detection():
 
         for item in dirs:
             if os.path.isfile(path + item):
-                # Extracting the file extension 
+                # Extracting the file extension
                 extension = item.split(".")[1]
 
                 if extension=="jpg" or extension=="JPG":
                     # Image : we will fill the variable x
                     # Reading the image
-                    img = Image.open(path + item)
+                    img = PIL.Image.open(path + item)
                     # Image scaling
-                    img = img.resize((IMAGE_SIZE, IMAGE_SIZE), Image.ANTIALIAS)
+                    img = img.resize((IMAGE_SIZE,IMAGE_SIZE), PIL.Image.Resampling.LANCZOS)
                     # Filling the variable x
                     x[i] = np.asarray(img, dtype=np.int32)
 
@@ -39,7 +39,7 @@ def load_data_detection():
                     labels = open(path + item, "r")
                     # Retrieving of lines from the text file
                     labels = labels.read().split('\n')
-                    # If the last line is empty, delete it 
+                    # If the last line is empty, delete it
                     if labels[-1]=="":
                         del labels[-1]
 
@@ -70,7 +70,7 @@ def load_data_detection():
                         # Determining the cell bounding box index in which to store the information
                         ind_box = 0
                         while y[i, ind_x, ind_y, 5*ind_box] == 1 and ind_box < BOX_PER_CELL - 1:
-                            # If the current index box is already in use (presence = 1)  
+                            # If the current index box is already in use (presence = 1)
                             # and the maximum number of boxes has not been reached, we go to the next box
                             ind_box = ind_box + 1
 
@@ -89,12 +89,12 @@ def load_data_detection():
                     i = i + 1
                     if err_flag == 1:
                         img_name = item.split(".")[0]
-                        img = Image.open(path + img_name + '.jpg')
+                        img = PIL.Image.open(path + img_name + '.jpg')
                         # Image scaling
-                        img = img.resize((IMAGE_SIZE, IMAGE_SIZE), Image.ANTIALIAS)
+                        img = img.resize((IMAGE_SIZE, IMAGE_SIZE), PIL.Image.Resampling.LANCZOS)
 
                         plt.imshow(img)
-                        for ind_cell in range(CELL_PER_DIM):                
+                        for ind_cell in range(CELL_PER_DIM):
                             plt.plot([ind_cell*PIX_PER_CELL, ind_cell*PIX_PER_CELL], [0, IMAGE_SIZE-1], 'k-')
                             plt.plot([0, IMAGE_SIZE-1], [ind_cell*PIX_PER_CELL, ind_cell*PIX_PER_CELL], 'k-')
 

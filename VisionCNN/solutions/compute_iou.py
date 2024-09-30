@@ -1,11 +1,11 @@
-def compute_iou(y_true, y_pred):
+def compute_iou(y_true_coord, y_pred_coord):
     ### "Denormalization" of bounding box coordinates
-    pred_box_xy = y_pred[:, 0:2]* y_std[0:2] + y_mean[0:2]
-    true_box_xy = y_true[:, 0:2]* y_std[0:2] + y_mean[0:2]
+    pred_box_xy = y_pred_coord[:, 0:2]* y_std[1:3] + y_mean[1:3]
+    true_box_xy = y_true_coord[:, 0:2]* y_std[1:3] + y_mean[1:3]
 
     ### "Denormalization of the width and height of bounding boxes
-    pred_box_wh = y_pred[:, 2:4] * y_std[2:4] + y_mean[2:4]
-    true_box_wh = y_true[:, 2:4] * y_std[2:4] + y_mean[2:4]
+    pred_box_wh = y_pred_coord[:, 2:4] * y_std[3:5] + y_mean[3:5]
+    true_box_wh = y_true_coord[:, 2:4] * y_std[3:5] + y_mean[3:5]
 
     # Computation of the minimum and maximum coordinates of the real bounding box
     true_wh_half = true_box_wh / 2.
@@ -15,7 +15,7 @@ def compute_iou(y_true, y_pred):
     # Computation of the minimum and maximum coordinates of the predicted bounding box
     pred_wh_half = pred_box_wh / 2.
     pred_mins    = pred_box_xy - pred_wh_half
-    pred_maxs    = pred_box_xy + pred_wh_half       
+    pred_maxs    = pred_box_xy + pred_wh_half
 
     # Determining the intersection of bounding boxes
     intersect_mins  = tf.maximum(pred_mins, true_mins)
