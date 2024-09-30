@@ -11,5 +11,5 @@ This tutorial uses the "wildlife" _dataset_.
 
 To download solutions to collab, run the command:
 ```
-!wget --recursive --no-check-certificate 'https://plmbox.math.cnrs.fr/d/7d9464fc90634b1280c4/?dl=1'
+!wget --recursive --no-check-certificate 'https://plmbox.math.cnrs.fr/d/fcbbccbf604b42c29e27/?dl=1'
 ```

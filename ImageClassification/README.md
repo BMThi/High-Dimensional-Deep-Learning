@@ -26,3 +26,8 @@ In this tutorial you will learn to:
 
 ---
 
+To download solutions to collab, run the command:
+```
+!wget --recursive --no-check-certificate 'https://plmbox.math.cnrs.fr/d/8b16b61b6b7e4d6c98d1/?dl=1'
+```
+
