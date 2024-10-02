@@ -6,7 +6,7 @@ cnn_simple.compile(
     metrics = ['accuracy']
 )
 
-cnn_simple_augmented_history = model.fit(
+cnn_simple_augmented_history = cnn_simple.fit(
     train_generator_augmented,
     validation_data = validation_generator,
     epochs = epochs

@@ -1,6 +1,6 @@
 test_prediction = vgg_combined.predict(test_generator)
 score_test = vgg_combined.evaluate(test_generator)
-print('Train accuracy:', score_test[1])
+print('Test accuracy:', score_test[1])
 
 # --- #
 
