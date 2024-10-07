@@ -15,8 +15,13 @@ The tutorials of this course are in the form of Jupyter notebooks.
 
 ## Class Project
 
-<!-- TODO : Description -->
-_TBA_
+Quatre mini-projets, par groupe de 3 ou 4 :
+* Approfondissement sur les CNNs,
+* Approfondissement sur les VAEs,
+* Approfondissement sur le SSL,
+* Approfondissement sur les RNNs.
+
+Présentation orale, 20 minutes questions comprises, sur la base de notebooks jupyters (un par projet).
 
 <br>
 
