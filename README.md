@@ -32,7 +32,7 @@ _Goal:_ Building and training a single-layer perceptron, step by step.
 <br>
 
 
-## PART I: Convolutional Neural Networks
+## PART I: Convolutional Neural Networks (CNNs)
 
 _Keywords_ : Convolutional layer, Pooling, Dropout, Convolutional network architectures ($\texttt{ResNet}$, $\texttt{Inception}$), Transfer learning and fine-tuning, Applications for image or signal classification, Applications for objects localization and detection.
 
