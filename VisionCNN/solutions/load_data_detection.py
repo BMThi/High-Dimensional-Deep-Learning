@@ -1,4 +1,4 @@
-def load_data_detection():
+def load_data_detection(image_size=IMAGE_SIZE):
     # Path to the database
     data_path = "./wildlife/"
     # Paths to the data of the 4 different classes
@@ -6,7 +6,7 @@ def load_data_detection():
     # Index for adding data to the x and y variables
     i = 0
     # Preparation of data structures for x and y
-    x = np.zeros((DATASET_SIZE, IMAGE_SIZE, IMAGE_SIZE, 3))
+    x = np.zeros((DATASET_SIZE, image_size, image_size, 3))
     y = np.zeros((DATASET_SIZE, CELL_PER_DIM, CELL_PER_DIM, NB_CLASSES + 5*BOX_PER_CELL))
 
     # Save normalized bounding box width/height
@@ -30,7 +30,7 @@ def load_data_detection():
                     # Reading the image
                     img = PIL.Image.open(path + item)
                     # Image scaling
-                    img = img.resize((IMAGE_SIZE,IMAGE_SIZE), PIL.Image.Resampling.LANCZOS)
+                    img = img.resize((image_size,image_size), PIL.Image.Resampling.LANCZOS)
                     # Filling the variable x
                     x[i] = np.asarray(img, dtype=np.int32)
 
@@ -52,7 +52,7 @@ def load_data_detection():
                         widths.append(float(label[3]))
                         heights.append(float(label[4]))
                         # Bounding box center coordinates in the image frame
-                        cx, cy = float(label[1]) * IMAGE_SIZE, float(label[2]) * IMAGE_SIZE
+                        cx, cy = float(label[1]) * image_size, float(label[2]) * image_size
                         # Determination of the indices of the cell in which the center falls
                         ind_x, ind_y = int(cx // PIX_PER_CELL), int(cy // PIX_PER_CELL)
                         # YOLO : "The (x, y) coordinates represent the center of the box relative to the bounds of the grid cell."
@@ -66,7 +66,7 @@ def load_data_detection():
                         # We arrange the class probabilities at the end of the vector ([ BOX 1 ; BOX 2 ; ... ; BOX N ; CLASSES])
                         y[i, ind_x, ind_y, 5 * BOX_PER_CELL:] = classes
 
-                        boxes.append([cx, cy, label[3]*IMAGE_SIZE, label[4]*IMAGE_SIZE])
+                        boxes.append([cx, cy, label[3]*image_size, label[4]*image_size])
                         # Determining the cell bounding box index in which to store the information
                         ind_box = 0
                         while y[i, ind_x, ind_y, 5*ind_box] == 1 and ind_box < BOX_PER_CELL - 1:
@@ -91,12 +91,12 @@ def load_data_detection():
                         img_name = item.split(".")[0]
                         img = PIL.Image.open(path + img_name + '.jpg')
                         # Image scaling
-                        img = img.resize((IMAGE_SIZE, IMAGE_SIZE), PIL.Image.Resampling.LANCZOS)
+                        img = img.resize((image_size, image_size), PIL.Image.Resampling.LANCZOS)
 
                         plt.imshow(img)
                         for ind_cell in range(CELL_PER_DIM):
-                            plt.plot([ind_cell*PIX_PER_CELL, ind_cell*PIX_PER_CELL], [0, IMAGE_SIZE-1], 'k-')
-                            plt.plot([0, IMAGE_SIZE-1], [ind_cell*PIX_PER_CELL, ind_cell*PIX_PER_CELL], 'k-')
+                            plt.plot([ind_cell*PIX_PER_CELL, ind_cell*PIX_PER_CELL], [0, image_size-1], 'k-')
+                            plt.plot([0, image_size-1], [ind_cell*PIX_PER_CELL, ind_cell*PIX_PER_CELL], 'k-')
 
                         for ind_box_plot in range(len(boxes)):
                             box = boxes[ind_box_plot]
