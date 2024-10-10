@@ -25,3 +25,12 @@ ECG\ Heartbeat\ Classification/Note.md
 ECG Heartbeat Classification/Untitled.ipynb
 ECG Heartbeat Classification/mitbih_test_all.csv.zip
 HumanActivityRecognitionEnglish
+
+# Virtual environments
+.venv
+.tf_venv
+.venv_tf
+.tf_test*
+
+# Data
+autoencoders/data/
