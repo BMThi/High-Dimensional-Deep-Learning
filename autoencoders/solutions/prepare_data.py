@@ -1,4 +1,4 @@
-# Flatten the images
+# Flatten the images and normalize the pixel values
 train_dataset = train_dataset.data.view(-1, 28*28).float()
 train_dataset = train_dataset / 255.0
 test_dataset = test_dataset.data.view(-1, 28*28).float()

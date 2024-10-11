@@ -34,3 +34,4 @@ HumanActivityRecognitionEnglish
 
 # Data
 autoencoders/data/
+variational_ae/data/
