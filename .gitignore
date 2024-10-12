@@ -33,5 +33,4 @@ HumanActivityRecognitionEnglish
 .tf_test*
 
 # Data
-autoencoders/data/
-variational_ae/data/
+data/
