@@ -63,6 +63,6 @@ def run_benchmark(hidden_dims, ae_widths, ae_depths):
                 # Store the results in the dictionaries
                 ae_train_loss[(p, width, depth)] = train_loss
                 ae_test_loss[(p, width, depth)] = test_loss
-                print(f"Train MSE: {mse_train_ae}, Test MSE: {mse_test_ae}")
+                print(f"Train MSE: {train_loss}, Test MSE: {test_loss}")
 
     return pca_train_loss, pca_test_loss, ae_train_loss, ae_test_loss
