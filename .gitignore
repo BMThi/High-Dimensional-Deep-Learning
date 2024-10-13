@@ -34,3 +34,6 @@ HumanActivityRecognitionEnglish
 
 # Data
 data/
+
+# My solutions files
+autoencoders_vae/vae/utils.py
